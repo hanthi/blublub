@@ -1,0 +1,463 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    color: #000000;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Overlay effect covering the full page */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure the overlay covers the full page */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent gray overlay */
+    z-index: -1; /* Place behind all content */
+}
+
+/* Remove the navbar border and padding */
+.nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+
+}
+
+/* Nav styling */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 8rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Nav styling */
+.nav a {
+    display: inline-block;
+    margin-top: 5px;
+    color: #000; /* Black text */
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px; /* Pill-shaped ring */
+    box-shadow: 0 0 10px 2px #000; /* Black ring */
+    transition: all 0.3s ease-in-out; /* Smooth transition for color and ring */
+}
+
+/* Hover Effect: Change Text and Ring Color */
+.nav a:hover {
+    color: #f9a825; /* Highlight text color */
+    background: #000; /* Black background */
+    box-shadow: 0 0 10px 2px #f9a825; /* Highlight ring color */
+}
+
+/* Header - logo below the nav */
+.header-logo {
+    width: 350px; /* Adjust logo size as needed */
+    margin: 5rem auto; /* Center the logo horizontally with space from nav */
+    display: block; /* Block-level element for better centering */
+}
+
+/* Hero Section */
+.hero {
+    color: #000000;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2; /* Ensure it appears above the background */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 2rem;
+}
+
+/* Style for the "Meet Our Artists" button */
+.btn {
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
+    color: #000; 
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px; /* Rounded pill shape */
+    box-shadow: 0 0 10px 2px #000; /* Black ring */
+    transition: all 0.3s ease-in-out; /* Smooth transition for color and ring */
+}
+
+/* Hover Effect: Change Text, Background, and Ring Color */
+.btn:hover {
+    color: #f9a825; /* Orange text */
+    background: #000; /* Black background */
+    box-shadow: 0 0 10px 2px #f9a825; /* Orange ring */
+}
+
+/* About Section */
+.about {
+    margin-top: 220px;
+    padding: 16rem 0;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent gray overlay */
+    text-align: center;
+}
+
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem; /* Space between text sections */
+    max-width: 1200px; /* Limit the width for clean layout */
+    margin: 0 auto; /* Center the container */
+}
+
+.about .container p {
+    flex: 1; /* Make each text block take equal space */
+    padding: 1.5rem; /* Add space inside the text blocks */
+    border-radius: 8px; /* Optional: Slightly rounded corners */
+    font-size: 1.2rem; /* Make the text slightly larger */
+    line-height: 1.6; /* Improve readability */
+}
+
+.side-by-side {
+    display: flex; /* Arrange elements side by side */
+    justify-content: space-between; /* Distribute space evenly */
+    gap: 2rem; /* Space between the blocks */
+    text-align: left; /* Align text to the left */
+}
+
+.side-by-side p {
+    flex: 1; /* Ensure all three paragraphs take equal space */
+    padding: 1rem; /* Add some padding for readability */
+}
+
+/* Artists Section */
+.artists {
+    padding: 2rem 0;
+    background: transparent; /* Ensure background is transparent */
+    text-align: center;
+}
+
+.artists h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.artist-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+.artist-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.3333% - 2rem);
+    max-width: 1 1 calc(33.3333% - 2rem);
+    text-align: center;
+}
+
+.artist-card img {
+    width: 100%;
+    height: auto;
+}
+
+.artist-card h3 {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.artist-card p {
+    padding: 0 1rem 1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 2rem 0;
+    background: transparent;
+    text-align: center;
+    font-size: 20px;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0.5px 0.5px 1.5px #f9a825;
+}
+
+.contact p {
+    margin-bottom: 0.5rem;
+    text-shadow: 0.5px 0.5px 1.5px #f9a825;
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.artist-card {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Retain text colors */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.artist-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Artist Portfolio Page */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Hover Effect for Gallery Images */
+.gallery img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hover Effect: Images Pop Out */
+.gallery img:hover {
+    transform: scale(1.05); /* Slightly increase the size of the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+}
+
+/* Small Images (Row of 4-5) */
+.gallery img.small {
+    flex: 1 1 calc(20% - 1rem); /* Adjust to fit 5 images per row */
+    max-width: calc(20% - 1rem);
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Featured Large Image */
+.gallery img.large {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for Large Images */
+.gallery img.large:hover {
+    transform: scale(1.02); /* Slightly smaller pop-out effect for large images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
+}
+
+/* Third Row: Only 3 Images */
+.gallery-row-3 img {
+    flex: 1 1 calc(30% - 1rem); /* Adjusts to fit 3 images per row */
+    max-width: calc(30% - 1rem);
+}
+
+/* Center the images in the third row */
+.gallery-row-3 {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Adds spacing between images */
+}
+
+/* Header Logo Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-logo {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1.5s ease-out forwards; /* 1.5s animation with smooth easing */
+    margin-top: 60px;
+}
+
+/* Style for the back-link in the footer of Enzo's portfolio page */
+footer.back-link {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 50px;
+}
+
+footer.back-link a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #000; /* Black text */
+    text-decoration: none;
+    border-radius: 50px; /* Rounded pill shape */
+    box-shadow: 0 0 10px 2px #000; /* Black ring by default */
+    transition: all 0.3s ease-in-out; /* Smooth transition for color and ring */
+}
+
+/* Hover Effect: Fill the ring with black and turn the text and ring orange */
+footer.back-link a:hover {
+    background: #000; /* Black background */
+    color: #f9a825; /* Orange text */
+    box-shadow: 0 0 10px 2px #f9a825; /* Orange ring */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Artist Header - Enzo's Portfolio */
+.artist-header {
+    color: #000000; /* Black text */
+    text-align: center;
+    padding: 6rem 2rem; /* Adjust padding for spacing */
+    background: transparent; /* Transparent to let the image show */
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Text with Fade-in Effect */
+.artist-header h1 {
+    font-size: 3.5rem; /* Larger font size for a cool, bold look */
+    margin-bottom: 1rem;
+    font-weight: 700; /* Bold header */
+    letter-spacing: 2px; /* Slight letter-spacing for modern look */
+    text-transform: uppercase; /* Capitalize all letters */
+    animation: fadeInText 1.5s ease-out forwards; /* Fade-in animation */
+    text-shadow: 0.5px 0.5px 1.5px #f9a825;
+}
+
+/* Paragraph Text with Fade-in Effect */
+.artist-header p {
+    font-size: 1.5rem;
+    max-width: 800px; /* Control the width of the text */
+    margin: 0 auto; /* Center align the paragraph */
+    line-height: 1.5;
+    font-weight: 400; /* Light weight for description */
+    animation: fadeInText 2s ease-out forwards; /* Fade-in animation with delay */
+    opacity: 0; /* Start invisible for the animation */
+    margin-top: 1rem;
+    letter-spacing: 1px; /* Small spacing for smooth readability */
+    text-shadow: 0.5px 0.5px 1.5px #f9a825;
+}
+
+/* Fullscreen Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #f9a825;
+}
+
+/* Style for Instagram button to match the other buttons */
+.instagram-btn {
+    display: inline-flex;
+    padding: 0.75rem 1.5rem;
+    color: #000; 
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px; /* Rounded pill shape */
+    box-shadow: 0 0 10px 2px #000; /* Black ring */
+    transition: all 0.3s ease-in-out; /* Smooth transition for color and ring */
+    margin-top: 10px;
+}
+
+/* Hover effect for Instagram button */
+.instagram-btn:hover {
+    color: #f9a825; /* Highlight text color */
+    background: #000; /* Black background */
+    box-shadow: 0 0 10px 2px #f9a825; /* Highlight ring color */
+}
+
+/* Style for Instagram logo inside the button */
+.instagram-btn img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* Style for the Instagram logo */
+.instagram-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+html {
+    scroll-behavior: smooth;
+  }

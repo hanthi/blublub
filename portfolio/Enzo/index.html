@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enzo's Portfolio</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+    <header class="artist-header">
+        <h1>Enzo</h1>
+        <p>Enzo specializes in realism and portrait tattoos. His work focuses on creating lifelike designs that tell a story through every detail.</p>
+        <a href="https://www.instagram.com/enzomajestix/" target="_blank" class="instagram-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" class="instagram-logo">
+            enzomajestix
+        </a>
+    </header>
+    <main>
+        <section class="gallery">
+            <!-- First Row: 4-5 Small Images -->
+            <img src="https://placehold.co/400x300" alt="Tattoo 1" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 2" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 3" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 4" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 5" class="small" data-src="https://placehold.co/1200x900">
+        
+            <!-- Second Row: One Large Image -->
+            <img src="https://placehold.co/1200x600" alt="Featured Tattoo" class="large" data-src="https://placehold.co/2400x1200">
+        
+            <!-- Third Row: Only 3 Images -->
+            <div class="gallery-row-3">
+                <img src="https://placehold.co/600x400" alt="Tattoo 6" data-src="https://placehold.co/1200x800">
+                <img src="https://placehold.co/600x400" alt="Tattoo 7" data-src="https://placehold.co/1200x800">
+                <img src="https://placehold.co/600x400" alt="Tattoo 8" data-src="https://placehold.co/1200x800">
+            </div>
+        
+            <!-- Fourth Row: Another Large Image -->
+            <img src="https://placehold.co/1200x600" alt="Featured Tattoo" class="large" data-src="https://placehold.co/2400x1200">
+        
+            <!-- Fifth Row: 4-5 Small Images -->
+            <img src="https://placehold.co/400x300" alt="Tattoo 9" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 10" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 11" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 12" class="small" data-src="https://placehold.co/1200x900">
+            <img src="https://placehold.co/400x300" alt="Tattoo 13" class="small" data-src="https://placehold.co/1200x900">
+        </section>
+        
+        <!-- Fullscreen Modal -->
+        <div id="modal" class="modal">
+            <span class="close" id="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    </main>
+    <footer class="back-link">
+    <a href="../../index.html">Back to Home</a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get all images in the gallery
+            const images = document.querySelectorAll('.gallery img');
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modalImage');
+            const closeBtn = document.getElementById('close');
+        
+            // Add click event to each image to open in fullscreen
+            images.forEach(image => {
+                image.addEventListener('click', function() {
+                    const src = image.getAttribute('data-src'); // Get the full-size image source
+                    modal.style.display = 'flex'; // Show the modal
+                    modalImage.src = src; // Set the modal image to the clicked image
+                });
+            });
+        
+            // Close the modal when the close button is clicked
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none'; // Hide the modal
+            });
+        
+            // Close the modal when clicking outside the image
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none'; // Hide the modal if the background is clicked
+                }
+            });
+        });
+        </script>
+    </body>
+</html>
