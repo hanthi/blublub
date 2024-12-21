@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,7 +14,28 @@ body {
     color: #000000;
     position: relative;
     min-height: 100vh;
+    margin: 0;
 }
+
+/* Add this for smaller screens to ensure background scrolls with the content */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; /* Makes background scroll with content on mobile */
+    }
+}
+
+/* Ensure container doesn't cause overflow */
+.container {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Prevent overflow clipping on elements (like artist cards) */
+* {
+    box-sizing: border-box; /* Make sure all elements take padding/border into account */
+}
+
+
 
 /* Overlay effect covering the full page */
 body::after {
@@ -65,6 +87,30 @@ body::after {
     color: #f9a825; /* Highlight text color */
     background: #000; /* Black background */
     box-shadow: 0 0 10px 2px #f9a825; /* Highlight ring color */
+}
+
+/* Media Query for Tablets and Smaller Screens */
+@media screen and (max-width: 768px) {
+    .nav ul {
+        gap: 4rem; /* Reduce the gap between buttons for tablet-sized screens */
+    }
+
+    .nav a {
+        padding: 1rem 2rem; /* Make buttons a little bigger */
+        font-size: 16px; /* Make text slightly larger */
+    }
+}
+
+/* Media Query for Phones */
+@media screen and (max-width: 480px) {
+    .nav ul {
+        gap: 2rem; /* Reduce the gap even more for phone-sized screens */
+    }
+
+    .nav a {
+        padding: 0.75rem 1.5rem; /* Increase button size */
+        font-size: 14px; /* Make the text more readable on small screens */
+    }
 }
 
 /* Header - logo below the nav */
@@ -119,6 +165,21 @@ body::after {
     font-size: 18px;
     background: rgba(255, 255, 255, 0.5); /* Semi-transparent gray overlay */
     text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 770px) {
+    .about .container {
+        flex-direction: column; /* Stack the paragraphs vertically */
+        align-items: flex-start; /* Align to the left */
+        padding: 1rem; /* Add padding for spacing */
+    }
+
+    .about .container p {
+        flex: none; /* Prevent paragraphs from stretching */
+        width: 100%; /* Make each paragraph take full width */
+        padding: 1rem 0; /* Add padding for readability */
+    }
 }
 
 .about .container {
@@ -461,3 +522,86 @@ footer.back-link a:hover {
 html {
     scroll-behavior: smooth;
   }
+
+  /* General Styles */
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Styles for Tablets (Max Width: 768px) */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    .artist-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .artist-header p {
+        font-size: 1rem;
+    }
+
+    .instagram-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    /* Gallery Adjustments */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .gallery img.small {
+        flex: 1 1 calc(50% - 10px); /* Two images per row */
+    }
+
+    .gallery img.large {
+        width: 100%; /* Large images take full width */
+    }
+
+    /* Footer Adjustments */
+    .back-link a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Responsive Styles for Phones (Max Width: 480px) */
+@media (max-width: 480px) {
+    /* Header Adjustments */
+    .artist-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .artist-header p {
+        font-size: 0.9rem;
+    }
+
+    .instagram-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    /* Gallery Adjustments */
+    .gallery img.small {
+        flex: 1 1 100%; /* One image per row */
+    }
+
+    .gallery img.large {
+        width: 100%; /* Large images take full width */
+    }
+
+    /* Modal Image Adjustments */
+    .modal img {
+        max-width: 90%;
+        max-height: 80vh;
+    }
+
+    /* Footer Adjustments */
+    .back-link a {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
