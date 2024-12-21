@@ -236,8 +236,8 @@ body::after {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.3333% - 2rem);
-    max-width: 1 1 calc(33.3333% - 2rem);
+    flex: 1 1 calc(33.3333% - 2rem); /* Default: 3 cards per row */
+    max-width: calc(33.3333% - 2rem); /* Default: 3 cards per row */
     text-align: center;
 }
 
@@ -255,6 +255,21 @@ body::after {
     padding: 0 1rem 1rem;
 }
 
+/* For screens between 600px and 900px */
+@media (max-width: 900px) {
+    .artist-card {
+        flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
+        max-width: calc(50% - 1rem); /* 2 cards per row */
+    }
+}
+
+/* For screens below 600px */
+@media (max-width: 600px) {
+    .artist-card {
+        flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
+        max-width: calc(50% - 1rem); /* 2 cards per row */
+    }
+}
 /* Contact Section */
 .contact {
     padding: 2rem 0;
