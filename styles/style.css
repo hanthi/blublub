@@ -343,7 +343,9 @@ body::after {
 
 /* Featured Large Image */
 .gallery img.large {
+    flex: 1 1 calc(40%);
     width: 100%;
+    margin: 5px;
     max-width: 100%;
     border-radius: 5px;
     object-fit: cover;
@@ -426,7 +428,7 @@ footer.back-link a:hover {
 
 /* Artist Header - Enzo's Portfolio */
 .artist-header {
-    color: #000000; /* Black text */
+    color: #ffffff; /* Black text */
     text-align: center;
     padding: 6rem 2rem; /* Adjust padding for spacing */
     background: transparent; /* Transparent to let the image show */
@@ -436,7 +438,7 @@ footer.back-link a:hover {
 
 /* Header Text with Fade-in Effect */
 .artist-header h1 {
-    font-size: 3.5rem; /* Larger font size for a cool, bold look */
+    font-size: 4rem; /* Larger font size for a cool, bold look */
     margin-bottom: 1rem;
     font-weight: 700; /* Bold header */
     letter-spacing: 2px; /* Slight letter-spacing for modern look */
@@ -447,7 +449,7 @@ footer.back-link a:hover {
 
 /* Paragraph Text with Fade-in Effect */
 .artist-header p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     max-width: 800px; /* Control the width of the text */
     margin: 0 auto; /* Center align the paragraph */
     line-height: 1.5;
@@ -618,5 +620,68 @@ html {
         font-size: 0.9rem;
         padding: 8px 12px;
     }
+}
+
+/* Adjust for screens smaller than 768px (standard iPhone size and smaller) */
+@media (max-width: 768px) {
+    .gallery img {
+        transform: scale(1.1); /* Zoom in by 10% */
+        transition: transform 0.3s ease; /* Smooth zoom animation */
+    }
+
+    .gallery img:hover {
+        transform: scale(1.15); /* Slightly more zoom on hover for interactivity */
+    }
+} 
+
+/* Adjust for screens smaller than 768px (standard iPhone size and smaller) */
+@media (max-width: 768px) {
+    .gallery {
+        display: flex;
+        flex-wrap: wrap; /* Ensure images wrap onto new lines if needed */
+        gap: 10px; /* Add space between images */
+        justify-content: center; /* Center the gallery images */
+    }
+
+    .gallery img {
+        transform: scale(1.1); /* Zoom in by 10% */
+        transition: transform 0.3s ease; /* Smooth zoom animation */
+    }
+
+    .gallery img:hover {
+        transform: scale(1.15); /* Slightly more zoom on hover for interactivity */
+    }
+}
+
+/* For improved readability on the background image */
+.artist-header {
+    position: relative;
+    z-index: 0;
+}
+
+.artist-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.6; /* Adjust opacity for better contrast */
+    z-index: -1;
+}
+
+/* Style the text */
+.artist-header h1, .artist-header p {
+    color: rgb(232, 232, 232); /* Keep text black */
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px; /* Optional: rounds the corners of the background */
+}
+
+/* Optional: subtle text shadow to improve readability */
+.artist-header h1, .artist-header p {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 80); /* Subtle black text shadow */
 }
 
